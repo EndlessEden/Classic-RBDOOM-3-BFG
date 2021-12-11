@@ -370,7 +370,7 @@ if(USE_VULKAN)
 	endif()
 	
 	add_definitions(-DUSE_VULKAN)
-	include_directories($ENV{VK_SDK_PATH}/Include)
+	include_directories($ENV{VULKAN_SDK}/Include)
 	
 	# override Glslang build options
 	SET_OPTION(ENABLE_SPVREMAPPER OFF)
@@ -382,7 +382,7 @@ if(USE_VULKAN)
 	#option(ENABLE_NV_EXTENSIONS "Enables support of Nvidia-specific extensions" ON)
 	#option(ENABLE_OPT "Enables spirv-opt capability if present" ON)
 	
-	set(GLSLANG_DIR $ENV{VK_SDK_PATH}/glslang)
+	set(GLSLANG_DIR $ENV{VULKAN_SDK}/glslang)
 	add_subdirectory(${GLSLANG_DIR} ${CMAKE_CURRENT_BINARY_DIR}/glslang)
 	
 	include_directories(${GLSLANG_DIR}/glslang)
